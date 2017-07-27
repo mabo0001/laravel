@@ -178,6 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 		//laravel-ide-help
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+        //txt文件解析服务提供者
+        App\Providers\FileParseServiceProvider::class,
 		
 
     ],
