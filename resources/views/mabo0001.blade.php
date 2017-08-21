@@ -7,11 +7,35 @@
     <title>{{$title}}</title>
 </head>
 <body>
- <form method="post" enctype="multipart/form-data" action = "upload">
+<br/>
+<div>
+ <form method="post" enctype="multipart/form-data" action = "uploadMobileMag">
      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
      <input type="file" name="picture">
-     <button type="submit"> 提交 </button>
+     <button type="submit"> mobile提交 </button>
  </form>
+ </div>
+
+
+
+<br/>
+<div>
+ <form method="post" enctype="multipart/form-data" action = "uploadBaseMag">
+     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+     <input type="file" name="picture">
+     <button type="submit"> base提交 </button>
+ </form>
+</div>
+
+
+<br/>
+<div>
+ <form method="post" enctype="multipart/form-data" action = "uploadCord">
+     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+     <input type="file" name="picture">
+     <button type="submit"> Cord提交 </button>
+ </form>
+</div>
 
 </body>
 </html>

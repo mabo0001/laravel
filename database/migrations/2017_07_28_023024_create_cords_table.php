@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBaseMagsTable extends Migration
+class CreateCordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateBaseMagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('base_mags', function (Blueprint $table) {
+        Schema::create('cords', function (Blueprint $table) {
             $table->increments('id');
-            $table->time('time');
-            $table->float('basevalue');
-            $table->integer('ext');
-            $table->date('date');
-            $table->integer('serial');
+            $table->integer('line');
+            $table->integer('station');
+            $table->double('actual_x');
+            $table->double('actual_y');
+            $table->double('actual_z');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateBaseMagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('base_mags');
+        Schema::dropIfExists('cords');
     }
 }

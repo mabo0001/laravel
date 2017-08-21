@@ -107,7 +107,6 @@ class FileParser {
 
                 $func = $this->head;
                 $out = $func($line);
-
                 if(isset($out)){
 
                     $this->header = null;
@@ -119,7 +118,7 @@ class FileParser {
             // execute callable to filter line
             if (is_callable($this->filter)) {
                 $func = $this->filter;
-                if (!(boolean)$func($line)) continue;
+                if ((boolean)$func($line)) continue;
              }
 
 

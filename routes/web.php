@@ -22,7 +22,28 @@ Route::get('/', function () {
 });
 
 //上传文件行为
-Route::post('upload', 'UploadController@index');
+Route::post('uploadMobileMag', 'UploadController1@UploadMobieMag');
+Route::post('uploadBaseMag',   'UploadController1@UploadBaseMag');
+Route::post('uploadCord','uploadController1@uploadCord');
+
+Route::get('excel/export','ExcelController1@export');
+Route::get('excel/import','ExcelController1@import');
+
+
+// 在这一行下面
+Route::get('admin/upload', 'Admin\UploadController@index');
+
+// 添加如下路由
+Route::post('admin/upload/file', 'Admin\UploadController@uploadFile');
+Route::delete('admin/upload/file', 'Admin\UploadController@deleteFile');
+Route::post('admin/upload/folder', 'Admin\UploadController@createFolder');
+Route::delete('admin/upload/folder', 'Admin\UploadController@deleteFolder');
+
+
+
+
+
+
 #Auth::routes();
 
 #Route::get('/home', 'HomeController@index');
